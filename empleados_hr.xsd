@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="EmployeesReport">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="Employee"
+                            maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <xs:element name="FirstName"
+                                        type="xs:string"
+                                        minOccurs="0"/>
+
+                            <xs:element name="LastName"
+                                        type="xs:string"/>
+
+                            <xs:element name="Salary"
+                                        type="xs:decimal"
+                                        minOccurs="0"/>
+
+                            <xs:element name="Department">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="DepartmentID"
+                                                    type="xs:integer"
+                                                    minOccurs="0"/>
+                                        <xs:element name="DepartmentName"
+                                                    type="xs:string"
+                                                    minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="Job">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="JobID"
+                                                    type="xs:string"/>
+                                        <xs:element name="JobTitle"
+                                                    type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+
+                        <xs:attribute name="EmployeeID"
+                                      type="xs:integer"
+                                      use="required"/>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
